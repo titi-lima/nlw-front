@@ -23,10 +23,16 @@ export function App() {
             Desenvolvido com 💛 no NLW da Rocketseat
           </span>
           <Separator className="h-6" orientation="vertical"></Separator>
-          <Button variant="outline">
-            <Github size={16} className="m-2" />
-            Github
-          </Button>
+          <a
+            href="https://github.com/titi-lima"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button variant="outline">
+              <Github size={16} className="mr-2" />
+              Github
+            </Button>
+          </a>
         </div>
       </div>
       <main className="flex flex-1 gap-6 p-6">
@@ -50,13 +56,13 @@ export function App() {
         </div>
         <aside className="w-80 space-y-6">
           <form className="space-y-6">
-            <label
+            <Label
               htmlFor="video"
               className="flex aspect-video cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed text-sm text-muted-foreground hover:bg-primary/5"
             >
               <FileVideo size={16} />
               Selecione um vídeo
-            </label>
+            </Label>
             <input
               type="file"
               id="video"
@@ -81,6 +87,20 @@ export function App() {
           </form>
           <Separator />
           <form className="space-y-6">
+            <div className="space-y-2">
+              <Label>Prompt</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Selecione um prompt" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="title">Título do YouTube</SelectItem>
+                  <SelectItem value="description">
+                    Descrição do YouTube
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
             <div className="space-y-2">
               <Label>Modelo</Label>
               <Select disabled defaultValue="gpt3.5">
